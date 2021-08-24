@@ -1,5 +1,5 @@
 #include<iostream>
-#include "./headers/App.h"
+#include "./headers/App.hpp"
 
 int main(int argc, char const *argv[])
 {
