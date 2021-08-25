@@ -1,5 +1,6 @@
 #include<iostream>
 #include<iomanip>
+
 #include "./headers/App.hpp"
 void help(){
 	std::printf("[1] Arithmatic Encoding \n\
@@ -7,11 +8,13 @@ void help(){
 }
 
 void welcome(){
-	std::printf("================= \x1b[33mOpenCPR\x1b[0m =================\n");
+	std::printf("                  +---------+\n\
+================= |\x1b[33m OpenCPR\x1b[0m | =================\n\
+                  +---------+\n");
 }
 
-int main(int argc, char const *argv[])
-{
+int main(int argc, char const *argv[]){
+	
 	welcome();
 	help();
 	std::cout<<opencpr::factorial(4)<<std::endl;
