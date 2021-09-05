@@ -1,6 +1,15 @@
+//#################################
+//(#)Skewness:
+// 	  skewness is a measure of the asymmetry of the probability distribution
+//    of a real-valued random variable about its mean.
+
+//(#)
+
+//#################################
 // standard imports ###############
 #include<iostream>
 #include<cmath>
+#include<any>
 
 // our imports ####################
 #include "../headers/tools.hpp"
@@ -14,7 +23,7 @@ unsigned long opencpr::factorial(unsigned long var){
 }
 //#################################
 //    n!
-//  ------      $ also known as no of ways of arrangements 
+//  ------      $ also known as: no of ways of arrangements 
 //  (n-r)!
 
 unsigned long opencpr::permutation(unsigned long n,unsigned long x){
@@ -22,15 +31,16 @@ unsigned long opencpr::permutation(unsigned long n,unsigned long x){
 }
 //#################################
 //     n!
-//  -------     $ also known as no of ways of selection 
+//  -------     $ also known as: no of ways of selection 
 //  r!*(n-r)!
 
 unsigned long opencpr::combination(unsigned long n,unsigned long x){
 	return factorial(n)/(factorial(x)*factorial(n-x));
 }
 //#################################
-//    nCx * P^x * Q^(n-x)
-//    probablity that a event occured (n) times
+//	nCx * P^x * Q^(n-x)
+//  probablity that a event occured (n) times
+//	Mean = n*p   Variance = n*p*q
 
 double opencpr::binomial(double p,double q,unsigned long n,unsigned long x){
 	return combination(n,x)*pow(p,x)*pow(q,(n-x));
@@ -38,12 +48,14 @@ double opencpr::binomial(double p,double q,unsigned long n,unsigned long x){
 //#################################
 // This is only for 8 bit unicodes
 // "Hello" => "48656c6c6f"
+
 std::string opencpr::hexstr(std::string arg){
 	std::string s = "\u3051";
 	return s;
 }
 //#################################
 // check if a number is prime
+
 bool opencpr::is_prime(unsigned long arg){
 	for (int i = 2; i < arg ; ++i){
 		if (arg%i==0){
@@ -52,7 +64,31 @@ bool opencpr::is_prime(unsigned long arg){
 	}
 	return true;
 }
+//#################################
+/* 
+@Description:
+	When the number of trials, n, in a binomial distribution
+   	becomes large (usually taken as larger than ten), the calculations 
+   	associated with determining the values of the terms becomes laborious.
+   	If n is large and p is small, and the product n*p is less than 5,
+   	a very good approxi-mation to a binomial distribution is given by the 
+   	corresponding poisson distribution.
+@Formula:
+	e^-l ( 1 + l + l^2 +  l^3 + ...)
+*/
+
+double opencpr::poisson(){
+	// not defined yet
+	return 1.0;
+}
 
 //#################################
-// skewness is a measure of the asymmetry of the probability distribution
-// of a real-valued random variable about its mean.
+// Exponential Distribution
+
+
+//#################################
+// Gamma Distribution
+
+
+//#################################
+// Chi-Square Distribution

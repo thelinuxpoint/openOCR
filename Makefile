@@ -11,21 +11,19 @@ default: $(headers) $(cpps) $(obj)
 	@$(CC) $(Main) -o ./build/opencpr $(obj)
 
 
-./build/arithmatic_coding.o: ./src/headers/arithmatic_coding.hpp ./src/cpp/arithmatic_coding.cpp
-	@printf "Compiling arithmatic_coding.cpp ... "
-	@$(CC) -c ./src/cpp/arithmatic_coding.cpp -o $@
+./build/compression.o: ./src/headers/compression.hpp ./src/cpp/compression.cpp
+	@printf "Compiling compression.cpp ... "
+	@$(CC) -c ./src/cpp/compression.cpp -o $@
 	@echo "[ok]"
 
+./build/shanons.o: ./src/headers/shanons.hpp ./src/cpp/shanons.cpp
+	@printf "Compiling shanons.cpp ... "
+	@$(CC) -c ./src/cpp/shanons.cpp -o $@
+	@echo "[ok]"
 
 ./build/tools.o: ./src/headers/tools.hpp ./src/cpp/tools.cpp
 	@printf "Compiling tools.cpp ... "
 	@$(CC) -c ./src/cpp/tools.cpp -o $@
-	@echo "[ok]"
-
-
-./build/huffman_coding.o: ./src/headers/huffman_coding.hpp ./src/cpp/huffman_coding.cpp
-	@printf "Compiling huffman_coding.cpp ... "
-	@$(CC) -c ./src/cpp/huffman_coding.cpp -o $@
 	@echo "[ok]"
 
 

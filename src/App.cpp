@@ -6,7 +6,8 @@
 
 void help(){
 	std::printf("[1] Arithmatic Encoding \n\
-[2] Huffman Encoding\n");
+[2] Huffman Encoding\
+\n");
 }
 
 void welcome(){
@@ -19,12 +20,5 @@ int main(int argc, char const *argv[]){
 	
 	welcome();
 	help();
-	std::cout<<opencpr::factorial(4)<<std::endl;
-	std::cout<<opencpr::permutation(3,1)<<std::endl;
-	std::cout<<opencpr::combination(4,2)<<std::endl;
-	std::cout<<std::setprecision(5)<<opencpr::binomial(0.8,0.2,3,1)<<std::endl;
-	std::cout<<opencpr::is_prime(12)<<std::endl;
-	std::cout<<opencpr::hexstr("sdsa")<<std::endl;
-
 	return 0;
 }
