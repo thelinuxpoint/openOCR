@@ -8,9 +8,10 @@ namespace opencpr{
 	class DSet{
 		public:
 			std::list<T> datac;
-			
+
 			DSet(std::list<T>);
 			DSet(std::initializer_list<T>);
+			friend std::ostream operator <<(std::ostream,DSet<T> arg);
 	};
 
 
