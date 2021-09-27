@@ -1,32 +1,35 @@
 CC=g++
+
+# this is the main file for testing of programs
 Main=./src/App.cpp
+
 headers=$(wildcard ./src/headers/*)
+
 cpps=$(wildcard ./src/cpp/*)
-objects=$(cpps:.cpp=.o)
+cp=$(addprefix ./src/cpp/, $(notdir $(cpps)))
+
+
+objects=$(cp:.cpp=.o)
 obj=$(addprefix ./build/, $(notdir $(objects)))
 
-
+# This the main 
 default: $(headers) $(cpps) $(obj)
 	@echo "Building => opencpr v0.1.0"
-	@$(CC) $(Main) -o ./build/opencpr $(obj)
+	@$(CC) -std=c++20 $(Main) -o ./build/opencpr $(obj)
 
-
-./build/compression.o: ./src/headers/compression.hpp ./src/cpp/compression.cpp
-	@printf "Compiling compression.cpp ... "
-	@$(CC) -c ./src/cpp/compression.cpp -o $@
+# Our Data Set Compiling Process Goes Here
+./build/dset.o: ./src/headers/dset.hpp ./src/cpp/dset.cpp
+	@printf "Compiling dset.cpp ... "
+	@$(CC) -c ./src/cpp/dset.cpp -o $@
 	@echo "[ok]"
 
-./build/shanons.o: ./src/headers/shanons.hpp ./src/cpp/shanons.cpp
-	@printf "Compiling shanons.cpp ... "
-	@$(CC) -c ./src/cpp/shanons.cpp -o $@
+# Our Statistical Mathematics File Compilation goes here
+./build/stats.o: ./src/headers/stats.hpp ./src/cpp/stats.cpp
+	@printf "Compiling stats.cpp ... "
+	@$(CC) -c ./src/cpp/stats.cpp -o $@
 	@echo "[ok]"
 
-./build/tools.o: ./src/headers/tools.hpp ./src/cpp/tools.cpp
-	@printf "Compiling tools.cpp ... "
-	@$(CC) -c ./src/cpp/tools.cpp -o $@
-	@echo "[ok]"
-
-
+# Test Runner
 run: ./build/opencpr
 	@make
 	@echo "Running ... './build/opencpr'"
@@ -34,3 +37,8 @@ run: ./build/opencpr
 
 install:
 	@echo "Not finished yet"
+
+push:
+	@git add .
+	@git commit -m "Updates"
+	@git push -u origin main	

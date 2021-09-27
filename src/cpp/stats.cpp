@@ -12,7 +12,7 @@
 #include<any>
 
 // our imports ####################
-#include "../headers/tools.hpp"
+#include "../headers/stats.hpp"
 
 //#################################
 //    n!
@@ -23,7 +23,7 @@ unsigned long opencpr::factorial(unsigned long var){
 }
 //#################################
 //    n!
-//  ------      $ also known as: no of ways of arrangements 
+//  ------      $ also known as: no of ways of arrangements of r elements
 //  (n-r)!
 
 unsigned long opencpr::permutation(unsigned long n,unsigned long x){
@@ -92,3 +92,20 @@ double opencpr::poisson(){
 
 //#################################
 // Chi-Square Distribution
+
+
+
+/*#################################
+[#] Correlation:
+
+@Formula
+	r ranges between -1 to +1
+	
+	[ X1 X2 X3 ... ] [ Y1 Y2 Y3 ... ]
+	
+	x=(X-X(bar))
+	
+				∑ x*y
+		r = --------------
+        	  sqrt(∑x∑y)
+*/
