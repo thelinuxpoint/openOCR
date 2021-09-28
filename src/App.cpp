@@ -19,6 +19,7 @@ void welcome(){
 int main(int argc, char const *argv[]){
 	
 	welcome();
-	help();
+	opencpr::DSet<int> d(1,2,3,4,5,6,7,8,9);
+	std::cout<<d*2<<std::endl;
 	return 0;
 }

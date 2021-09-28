@@ -20,13 +20,13 @@ default: $(headers) $(cpps) $(obj)
 # Our Data Set Compiling Process Goes Here
 ./build/dset.o: ./src/headers/dset.hpp ./src/cpp/dset.cpp
 	@printf "Compiling dset.cpp ... "
-	@$(CC) -c ./src/cpp/dset.cpp -o $@
+	@$(CC) -std=c++20 -c ./src/cpp/dset.cpp -o $@
 	@echo "[ok]"
 
 # Our Statistical Mathematics File Compilation goes here
 ./build/stats.o: ./src/headers/stats.hpp ./src/cpp/stats.cpp
 	@printf "Compiling stats.cpp ... "
-	@$(CC) -c ./src/cpp/stats.cpp -o $@
+	@$(CC) -std=c++20 -c ./src/cpp/stats.cpp -o $@
 	@echo "[ok]"
 
 # Test Runner

@@ -1,3 +1,4 @@
+#include <algorithm>
 #include <list>
 #include <ranges>
 #include <initializer_list>
@@ -13,3 +14,4 @@ template <typename T>
 opencpr::DSet<T>::DSet(std::initializer_list<T> arg):datac(arg){
 
 }
+

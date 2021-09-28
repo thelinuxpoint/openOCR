@@ -4,7 +4,7 @@ MachineLearning
        +-> Linear Regression
 
 @Equation:
-
+	(2D)
 	y = mx + c
 	where m = weight and c = bias
 
@@ -17,5 +17,4 @@ MachineLearning
 #include <vector>
 #include <iterator>
 #include <coroutine>
-
 
