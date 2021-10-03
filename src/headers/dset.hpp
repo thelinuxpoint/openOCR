@@ -9,11 +9,14 @@ namespace ranges = std::ranges;
 namespace opencpr{
 	template<typename T>
 	class DSet{
+
+		
 		public:
 			std::list<T> datac;
 
 
 			DSet(std::list<T> arg);
+
 			DSet(std::initializer_list<T> arg);
 			// 
 			DSet(auto ...arg){

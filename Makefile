@@ -5,8 +5,8 @@ Main=./src/App.cpp
 
 headers=$(wildcard ./src/headers/*)
 
-cpps=$(wildcard ./src/cpp/*)
-cp=$(addprefix ./src/cpp/, $(notdir $(cpps)))
+cpps=$(wildcard ./src/General/*)
+cp=$(addprefix ./src/General/, $(notdir $(cpps)))
 
 
 objects=$(cp:.cpp=.o)
@@ -20,13 +20,13 @@ default: $(headers) $(cpps) $(obj)
 # Our Data Set Compiling Process Goes Here
 ./build/dset.o: ./src/headers/dset.hpp ./src/cpp/dset.cpp
 	@printf "Compiling dset.cpp ... "
-	@$(CC) -std=c++20 -c ./src/cpp/dset.cpp -o $@
+	@$(CC) -std=c++20 -c ./src/General/dset.cpp -o $@
 	@echo "[ok]"
 
 # Our Statistical Mathematics File Compilation goes here
-./build/stats.o: ./src/headers/stats.hpp ./src/cpp/stats.cpp
-	@printf "Compiling stats.cpp ... "
-	@$(CC) -std=c++20 -c ./src/cpp/stats.cpp -o $@
+./build/statistic.o: ./src/headers/statistic.hpp ./src/cpp/statistic.cpp
+	@printf "Compiling statistic.cpp ... "
+	@$(CC) -std=c++20 -c ./src/General/statistic.cpp -o $@
 	@echo "[ok]"
 
 # Test Runner

@@ -1,2 +1,2 @@
 #include "dset.hpp"
-#include "stats.hpp"
+#include "statistic.hpp"

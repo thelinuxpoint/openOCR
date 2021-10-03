@@ -4,7 +4,6 @@
 //    of a real-valued random variable about its mean.
 
 //(#)
-
 //#################################
 // standard imports ###############
 #include<iostream>
@@ -12,7 +11,7 @@
 #include<any>
 
 // our imports ####################
-#include "../headers/stats.hpp"
+#include "../headers/statistic.hpp"
 
 //#################################
 //    n!

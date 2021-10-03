@@ -14,4 +14,7 @@ template <typename T>
 opencpr::DSet<T>::DSet(std::initializer_list<T> arg):datac(arg){
 
 }
-
+template <typename T>
+double opencpr::DSet<T>::stdev(){
+	
+}
