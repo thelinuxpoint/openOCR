@@ -11,7 +11,7 @@
 	phi(p) = p-1
 #####################################*/
 
-struct Keypair{
+struct opencpr::Keypair{
 	std::string_view private; // this is the users private key;
 	std::string_view public;
 }
@@ -30,31 +30,33 @@ int gcd(int x,int y){
 @Formula:
 	
 #################################*/
-/*
-@Process:
+
+/*###############################
+@RSA Process:
 	select 2 prime numbers p and q
 	             +
 	 find n = pxq and phi(n)=n-1
                  +
 	1<e< phi(n) && gcd(phi,e)==1
 				 +
-	       d=(1+k*phi(n))
+	       d=(1+k*phi(n))/e
 	             +
 	encrypt message as m^e mod n
-*/
+#################################*/
+
 // we find encrytion key using gcd and phi
 // generate key RSA
-Keypair gkeyrsa(int nounce){
+Keypair opencpr::gkeyrsa(int nounce){
 
 	return Keypair {};
 }
-
-Hexstr ersa(std::string_view public){
+//
+Hexstr opencpr::ersa(std::string_view public){
 
 }
+//
+std::string_view opencpr::drsa(std::string_view private,Hexstr str){
 
-std::string_view drsa(std::string_view private,Hexstr str){
-	
 }
 
 
